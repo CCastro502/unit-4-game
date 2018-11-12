@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PseudoCode</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <style>
+        body {
+            background: papayawhip; 
+        }
+
+        .crystal {
+            height: 100px;
+            width: 100px;
+            margin-right: 10px;
+            background: red;
+            position: relative;
+            float: left;
+            margin-bottom: 0;
+        }
+
+        .total {
+            margin-top: 200px;
+            margin-left: 200px;
+            height: 100px;
+            width: 100px;
+            font-size: 20px;
+            background-color: blue;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+    <div class='divContainer'>
+
+    </div>
+
+    <!-- <div class="totalAddedContainer">
+
+    </div> -->
+
+    <div class="totalValContainer">
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script>
+        console.log('welcome to the console')
+
+        // global variables
+        // wins, loses, goalNumber, userscore
+
+
+        // function 1
+        //  var images = ['assets/crystl1', 'assets/crystal2]
+        // set goalNumber with math.random
+        // loop through images array
+        // for every index, create image on screen
+        // add class
+        // add src
+        // add crystal value as attribute
+        // append image to screen
+
+
+        // create click event on crystals
+        // use $(this) to capture value attribute
+        // add clicked value to userScore
+        // create conditions to check for win or loss using if statements
+        // if win or loss, restart game and increment wins or losses
+
+        // global variables
+        // -------------------------------------------------------------
+        var x = 0;
+        var y = {};
+        var stringArray = [];
+        var numberArray = [];
+
+        // functions
+        // -------------------------------------------------------------
+        function makeDivs() {
+            var array = [1, 2, 3, 4];
+            for (var i = 0; i < array.length; i++) {
+                var div = $("<div>");
+                div.addClass('crystal');
+                div.attr('crystalVal', Math.floor(Math.random() * 11) + 1);
+                div.attr('id', i);
+                $('.divContainer').append(div);
+            }
+            totalValFunct();
+        }
+        // main process
+        // -------------------------------------------------------------
+        makeDivs();
+
+        function totalValFunct() {
+            $('.totalValContainer').addClass('total');
+            randomNum = Math.floor(Math.random() * 108 + 12);
+            $('.totalValContainer').attr('totalVal', randomNum);
+            $('.totalValContainer').append(randomNum);
+        }
+
+        $(".crystal").on('click', function (e) {
+            stringArray.push(e.target.getAttribute("crystalVal"));
+            var numberArray = stringArray.map(Number);
+            var totalAdded = addTotal();
+            // $('.totalAddedContainer').addClass('added');
+            // $('.totalAddedContainer').append(totalAdded);
+            // x = 0;
+
+            // for (i = 0; i < z.length; i++) {
+            //     x += z[i];
+            // console.log(x);
+            // }
+        });
+
+        function addTotal() {
+            // x = 0
+            for (i = 0; i < numberArray.length; i++) {
+                x += numberArray[i];
+            }
+            console.log(x);
+        }
+
+
+    </script>
+
+</body>
+
+</html>
