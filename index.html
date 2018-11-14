@@ -5,55 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PseudoCode</title>
+    <title>Onion Collector Game</title>
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-    <style>
-        body {
-            background-image: url("assets/images/background-img-farm.jpg");
-            background-repeat: no-repeat;
-            background-size: 100%;
-        }
-
-        h1 {
-            font-family: 'Gloria Hallelujah', cursive;
-            font-size: 90px;
-        }
-
-        .container {
-            margin-top: 120px;
-        }
-
-        #row1 {
-            margin-bottom: 25px;
-        }
-
-        .allTotals {
-            font-size: 18px;
-            font-family: serif;
-        }
-
-        .winslosses {
-            font-size: 18px;
-            font-family: serif;
-        }
-
-        .crystal {
-            height: 100px;
-            width: 100px;
-            background: red;
-            margin-bottom: 0;
-        }
-
-        .total {}
-    </style>
 </head>
 
 <body>
@@ -104,66 +66,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script>
-        var x = 0;
-        var wins = 0;
-        var losses = 0;
-        var stringArray = [];
-        var numberArray = [];
-        var totalAdded;
-        function makeDivs() {
-            $('#whiteOnion').attr('value', Math.floor(Math.random() * 12) + 1);
-            $('#redOnion').attr('value', Math.floor(Math.random() * 13));
-            $('#yellowOnion').attr('value', Math.floor(Math.random() * 13));
-            $('#shallot').attr('value', Math.floor(Math.random() * 13));
-            $('.totalValContainer').addClass('total');
-            randomNum = Math.floor(Math.random() * 101 + 19);
-            $('.totalValContainer').attr('totalVal', randomNum);
-            $('.totalValContainer').text(randomNum);
-            $('.totalAddedContainer').addClass('added');
-            $('.win').text(wins);
-            $('.loss').text(losses);
-        }
-        makeDivs();
-
-        $(".onion").on('click', function (e) {
-            stringArray.push(e.target.getAttribute("value"));
-            var numberArray = stringArray.map(Number);
-            var totalAdded = function () {
-                x = 0
-                for (j = 0; j < numberArray.length; j++) {
-                    x += numberArray[j];
-                }
-                return x;
-            }
-            winChecker(totalAdded);
-            $('.totalAddedContainer').text(totalAdded);
-
-        });
-
-        function winChecker(totalAdded) {
-            if (totalAdded() === randomNum) {
-                wins++;
-                x = 0;
-                numberArray.length = 0;
-                stringArray.length = 0;
-                makeDivs();
-                alert("You carried all the onions you could back to the farm! Now get back out there and get some more onions!")
-            } else if (totalAdded() > randomNum) {
-                losses++;
-                x = 0;
-                numberArray.length = 0;
-                stringArray.length = 0;
-                makeDivs();
-                alert("You tried to carry too many onions and your bag ripped. Grab a new bag and start again or else we'll starve this winter")
-            }
-        }
-
-
+    <script src="assets/javascript/game.js">
     </script>
 
 </body>
